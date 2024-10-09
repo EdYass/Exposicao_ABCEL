@@ -5,7 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
-import java.util.List;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
@@ -13,7 +13,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_julgamento")
-public class Julgamento {
+public class Julgamento implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
